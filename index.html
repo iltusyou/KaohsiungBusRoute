@@ -153,19 +153,27 @@
             var id = target.id;
 
             var parent = $('#' + id).parent();
-            var querybusStop = $.grep(busStopList, function (e) { return e.id == id })[0];
-            var querybusRoute = $.grep(busRouteList, function (e) { return e.id == id })[0];
+            var querybusStop = $.grep(busStopList, function (e) { return e.id == id });
+            var querybusRoute = $.grep(busRouteList, function (e) { return e.id == id });
 
-            if (parent.hasClass('active')) {                
-                parent.removeClass('active');
-                querybusStop.show = false;
-                querybusRoute.show = false;
+            if (querybusStop.length > 0 && querybusRoute.length > 0) {
+                if (parent.hasClass('active')) {
+                    parent.removeClass('active');
+                    querybusStop[0].show = false;
+                    querybusRoute[0].show = false;
+                }
+                else {
+                    parent.addClass('active');
+                    querybusStop[0].show = true;
+                    querybusRoute[0].show = true;
+                }
             }
-            else {                
-                parent.addClass('active');
-                querybusStop.show = true;
-                querybusRoute.show = true;
+            else {
+                alert('No data!!');
+                console.log(id);
             }
+
+
             showMap();
         }
     
