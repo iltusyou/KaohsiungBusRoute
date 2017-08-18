@@ -1,5 +1,5 @@
-﻿var busRouteApi = 'http://ptx.transportdata.tw/MOTC/v2/Bus/Shape/City/Kaohsiung?$format=json'; //公車路線
-var busSstopApi = 'http://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/Kaohsiung?$format=json'; //公車站牌
+﻿var busRouteApi = 'https://ptx.transportdata.tw/MOTC/v2/Bus/Shape/City/Kaohsiung?$format=json'; //公車路線
+var busSstopApi = 'https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/Kaohsiung?$format=json'; //公車站牌
 
 //地圖初始化
 function initMap() {
