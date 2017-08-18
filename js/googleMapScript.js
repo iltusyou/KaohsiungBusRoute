@@ -14,7 +14,6 @@ function initMap() {
 function showMap() {
     clearMap();
     var busStopShowList = $.grep(busStopList, function (e) { return e.show == true });
-    console.log(busStopShowList);
     $.each(busStopShowList, function (index, value) {
         $.each(value.markerList, function (i, marker) {
             marker.setMap(map);
@@ -22,11 +21,11 @@ function showMap() {
     });
 
     var busRouteShowList = $.grep(busRouteList, function (e) { return e.show == true });
-    console.log(busRouteShowList);
     $.each(busRouteShowList, function (index, value) {
         var polyline = value.polyline;
         polyline.setMap(map);
     });
+
     console.log('show map end.');
 }
 

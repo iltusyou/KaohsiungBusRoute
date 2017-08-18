@@ -118,10 +118,14 @@
                     var wkt = value.WKT.replace('LINESTRING(', '').replace(')', '');
                     var wktList = wkt.split(',');
                     var flightPlanCoordinates = [];
+                    var markerListDebug = [];
+                    
                     $.each(wktList, function (i, e) {
+                        var lat = Number(e.split(' ')[1]); 
+                        var lng = Number(e.split(' ')[0]);
                         flightPlanCoordinates.push({
-                            lat: Number(e.split(' ')[1]),
-                            lng: Number(e.split(' ')[0])
+                            lat: lat,
+                            lng: lng
                         });
                     });
                     var flightPath = new google.maps.Polyline({
@@ -131,8 +135,8 @@
                         strokeOpacity: 0.6,
                         strokeWeight: 5
                     });
-
                     var busRoute = new BusRoute(id, flightPath, false);
+
                     busRouteList.push(busRoute);
                 });
 
@@ -172,7 +176,6 @@
                 alert('No data!!');
                 console.log(id);
             }
-
 
             showMap();
         }
