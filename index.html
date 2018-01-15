@@ -28,7 +28,7 @@
         <div class="row googleMap">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar" id="mainLine">
-                    <li><a href="#">主幹線</a></li>
+                    <!-- <li><a href="#">主幹線</a></li> -->
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 googleMap">
@@ -115,7 +115,7 @@
                         }
                     }
 
-                    var wkt = value.WKT.replace('LINESTRING(', '').replace(')', '');
+                    var wkt = value.Geometry.replace('LINESTRING(', '').replace(')', '');
                     var wktList = wkt.split(',');
                     var flightPlanCoordinates = [];
                     var markerListDebug = [];
